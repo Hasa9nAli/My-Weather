@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlinx-serialization") // Add this line
+
 }
 
 android {
@@ -50,6 +52,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.material)
+    implementation(libs.protolite.well.known.types)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,6 +63,23 @@ dependencies {
     implementation (libs.ui) // or latest version
     implementation(libs.ui.graphics)
     implementation(libs.compose.cloudy)
+
+    implementation (libs.ktor.client.core)
+    implementation (libs.ktor.client.android)
+    implementation (libs.ktor.client.content.negotiation)
+
+    // Koin
+    implementation (libs.koin.android)
+    implementation (libs.koin.androidx.compose)
+
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+
+    // Serialization
+    implementation (libs.kotlinx.serialization.json.v160)
+    implementation (libs.ktor.serialization.kotlinx.json)
+
+    implementation(libs.kotlinx.datetime)
+
 
 
 }
