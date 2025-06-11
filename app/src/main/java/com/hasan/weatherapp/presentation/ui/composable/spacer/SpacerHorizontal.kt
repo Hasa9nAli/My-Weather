@@ -1,14 +1,14 @@
-package com.hasan.weatherapp.ui.composable.spacer
+package com.hasan.weatherapp.presentation.ui.composable.spacer
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.hasan.weatherapp.ui.theme.largeUnit
-import com.hasan.weatherapp.ui.theme.mediumUnit
-import com.hasan.weatherapp.ui.theme.smallUnit
-import com.hasan.weatherapp.ui.theme.tinyUnit
-import com.hasan.weatherapp.ui.theme.xLargeUnit
+import com.hasan.weatherapp.presentation.ui.theme.largeUnit
+import com.hasan.weatherapp.presentation.ui.theme.mediumUnit
+import com.hasan.weatherapp.presentation.ui.theme.smallUnit
+import com.hasan.weatherapp.presentation.ui.theme.tinyUnit
+import com.hasan.weatherapp.presentation.ui.theme.xLargeUnit
 
 @Composable
 fun SpacerHorizontalTiny(){

@@ -1,4 +1,4 @@
-package com.hasan.weatherapp.ui.composable.TextIcon
+package com.hasan.weatherapp.presentation.ui.composable.TextIcon
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,12 +20,13 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import com.hasan.weatherapp.R
-import com.hasan.weatherapp.ui.theme.BlackColor8
-import com.hasan.weatherapp.ui.theme.largeUnit
-import com.hasan.weatherapp.ui.theme.smallUnit
-import com.hasan.weatherapp.ui.theme.tinyUnit
-import com.hasan.weatherapp.ui.theme.titleFontSize
-import com.hasan.weatherapp.ui.theme.xSmallUnit
+import com.hasan.weatherapp.presentation.ui.theme.WhiteOrBlack8
+import com.hasan.weatherapp.presentation.ui.theme.WhiteOrBlack87
+import com.hasan.weatherapp.presentation.ui.theme.largeUnit
+import com.hasan.weatherapp.presentation.ui.theme.mediumFontSize
+import com.hasan.weatherapp.presentation.ui.theme.smallUnit
+import com.hasan.weatherapp.presentation.ui.theme.tinyUnit
+import com.hasan.weatherapp.presentation.ui.theme.xSmallUnit
 
 @Composable
 fun TemperatureRangeTextIcon(
@@ -35,7 +36,7 @@ fun TemperatureRangeTextIcon(
 ) {
     Row(
         modifier
-            .background(BlackColor8, shape = RoundedCornerShape(100))
+            .background(WhiteOrBlack8, shape = RoundedCornerShape(100))
             .padding(vertical = smallUnit, horizontal = largeUnit),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(smallUnit)
@@ -46,12 +47,16 @@ fun TemperatureRangeTextIcon(
                 tinyUnit
             )
         ) {
-            Icon(painter = painterResource(R.drawable.ic_arrow_down), null)
+            Icon(
+                painter = painterResource(R.drawable.ic_arrow_down), null,
+                tint = WhiteOrBlack87
+                )
             Text(
                 text = maxTemperature,
-                fontSize = titleFontSize,
+                fontSize = mediumFontSize,
                 fontWeight = FontWeight.Medium,
-                letterSpacing = TextUnit(0.25f, TextUnitType.Sp)
+                letterSpacing = TextUnit(0.25f, TextUnitType.Sp),
+                color = WhiteOrBlack87
             )
         }
         Spacer(
@@ -67,12 +72,14 @@ fun TemperatureRangeTextIcon(
                 tinyUnit
             )
         ) {
-            Icon(painter = painterResource(R.drawable.ic_arrow_down), null)
+            Icon(painter = painterResource(R.drawable.ic_arrow_down), null, tint = WhiteOrBlack87)
             Text(
                 text = minTemperature,
-                fontSize = titleFontSize,
-                fontWeight = FontWeight.Normal,
-                letterSpacing = TextUnit(0.25f, TextUnitType.Sp)
+                fontSize = mediumFontSize,
+                fontWeight = FontWeight.Medium,
+                letterSpacing = TextUnit(0.25f, TextUnitType.Sp),
+                color = WhiteOrBlack87
+
             )
         }
     }

@@ -1,7 +1,10 @@
-package com.hasan.weatherapp.viewModel
+package com.hasan.weatherapp
 
 import android.app.Application
 import com.hasan.weatherapp.di.appModule
+import com.hasan.weatherapp.di.networkModule
+import com.hasan.weatherapp.di.repoModule
+import com.hasan.weatherapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +15,7 @@ class WeatherApp : Application() {
 
         startKoin {
             androidContext(this@WeatherApp)
-            modules(appModule)
+            modules(networkModule, appModule, repoModule, viewModelModule)
         }
     }
 }
