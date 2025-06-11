@@ -9,6 +9,10 @@ import io.ktor.client.request.parameter
 class ApiService(private val client: HttpClient) {
     suspend fun getWeather(latitude: Double, longitude: Double): WeatherResponse {
         return client.get(BASE_URL) {
+            "https://api.open-meteo.com/v1/forecast/" +
+                    "?latitude= latitude" +
+                    "&longitude?= longitude" +
+                    "&daily=temperature_2m_max,temperature_2m_min,weather_code,uv_index_max&hourly=temperature_2m,weather_code,is_day&current=temperature_2m,wind_speed_10m,relative_humidity_2m,rain,weather_code,apparent_temperature,pressure_msl,is_day,precipitation"
             parameter("latitude", latitude)
             parameter("longitude", longitude)
             parameter("daily", "temperature_2m_max,temperature_2m_min,weather_code,uv_index_max")
@@ -22,3 +26,6 @@ class ApiService(private val client: HttpClient) {
         const val BASE_URL = "https://api.open-meteo.com/v1/forecast"
     }
 }
+
+
+
