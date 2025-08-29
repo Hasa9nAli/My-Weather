@@ -2,8 +2,6 @@ package com.hasan.weatherapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import com.hasan.weatherapp.R
-import kotlinx.datetime.LocalTime
-import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 
 val PrimaryColor = Color(0xFF87CEFA)
@@ -42,11 +40,11 @@ val BottomGradientColor = if(isNightTimeApproximate())Color(0xFF060414) else Col
 
 fun isNightTimeApproximate(): Boolean {
     val currentTime = kotlinx.datetime.Clock.System.now()
-        .toLocalDateTime(TimeZone.currentSystemDefault())
+        .toLocalDateTime(kotlinx.datetime.TimeZone.currentSystemDefault())
         .time
-    val nightStart = LocalTime(18, 0)
-    val nightEnd = LocalTime(6, 0)
-    return (currentTime > nightStart || currentTime < nightEnd)
+    val nightStart = kotlinx.datetime.LocalTime(18, 0)
+    val nightEnd = kotlinx.datetime.LocalTime(6, 0)
+    return !(currentTime > nightStart || currentTime < nightEnd)
 }
 
 
